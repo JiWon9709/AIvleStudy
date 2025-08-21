@@ -18,11 +18,20 @@ public class Main {
 	static int[] arr;
 	static int[] arr_sum;
 	
-//	public static void bubble_sort() {
-//		for(int i = 0; i < N-1; i++) {
-//			for(int j = 1; j <)
-//		}
-//	}
+	// 인접한 원소를 비교하면서 가장 큰 원소를 swap하면서 맨 오른쪽부터 채워나가는 sort
+	public static void bubble_sort() {
+		int tmp;
+		
+		for(int i = 0; i < N-1; i++) {
+			for(int j = 0; j < N-i-1; j++) {
+				if(arr[j] > arr[j+1]) {
+					tmp = arr[j];
+					arr[j] = arr[j+1];
+					arr[j+1] = tmp;
+				}
+			}
+		}
+	}
 	
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -35,9 +44,10 @@ public class Main {
 			arr[i] = Integer.parseInt(st.nextToken());
 		}
 		
-//		bubble_sort();
+		bubble_sort();
 //		merge_sort();
-		Arrays.sort(arr);
+//		Arrays.sort(arr);
+//		System.out.println(Arrays.toString(arr));
 		int sum = 0;
 		for(int i = 0; i < N; i++) {
 			sum += arr[i];
