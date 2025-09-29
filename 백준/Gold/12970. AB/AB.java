@@ -24,11 +24,11 @@ public class Main {
                 // 뒤로 can_move 칸 밀기
                 char temp = result[i];
                 for (int j = i; j < i + can_move; j++) {
-                    result[j] = result[j + 1]; // 오른쪽으로 한 칸씩 당김
+                    result[j] = result[j + 1]; // 왼쪽으로 한 칸씩 옮기기
                 }
                 result[i + can_move] = temp;
                 remain -= can_move;
-                b--; // B 하나 자리를 왼쪽으로 뺏김
+                //b--; // B 하나 자리를 왼쪽으로 뺏김(사전순을 위한 변수)
             }
 
             System.out.println(new String(result));
